@@ -1,0 +1,8 @@
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\bin\Debug\GroupBoxRadioControl.dll
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\bin\Debug\GroupBoxRadioControl.pdb
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.GroupBoxRadioControl.resources
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.csproj.GenerateResource.cache
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.csproj.CoreCompileInputs.cache
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.dll
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.pdb
+C:\Users\dscudder\Source\Repos\GroupBoxRadioControl\GroupBoxRadioControl\obj\Debug\GroupBoxRadioControl.csprojAssemblyReference.cache

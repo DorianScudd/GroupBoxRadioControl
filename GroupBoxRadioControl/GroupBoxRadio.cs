@@ -10,13 +10,17 @@ using System.Windows.Forms;
 
 namespace GroupBoxRadioControl
 {
-    public partial class UserControl1: UserControl
+    public partial class GroupBoxRadioControl : UserControl
     {
-        public UserControl1()
+
+        int numberOfButtons = 0;
+        int currentValue = 1;
+        List<RadioButton> rbList = new List<RadioButton>();
+        public event EventHandler CurrentSelectionChanged;
+
+        public GroupBoxRadioControl()
         {
             InitializeComponent();
-
-            List<RadioButton> rbList = new List<RadioButton>();
 
             rbList.Add(this.rb0);
             rbList.Add(this.rb1);
@@ -25,19 +29,66 @@ namespace GroupBoxRadioControl
             rbList.Add(this.rb4);
             rbList.Add(this.rb5);
             rbList.Add(this.rb6);
-
-
+            rbList.Add(this.rb7);
+            numberOfButtons = rbList.Count();
         }
 
-        public int CurrentSelection(RadioButton rb)
+        //https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms996431(v=msdn.10)
+        [System.ComponentModel.Category("Appearance")]
+        [System.ComponentModel.Bindable(true)]
+        public int CurrentSelection
         {
-        https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms996431(v=msdn.10)
-            int currentValue = 0;
+            get
             {
-                if ( rb.Checked > 0 & Value <= )
-                    radioButtons(Value - 1).Checked = true;
-                rb = 5;
+                return currentValue;
+            }
+            set
+            {
+                if (currentValue > 0 && currentValue <= numberOfButtons)
+                {
+                    rbList[currentValue - 1].Checked = true;
+                }
+
             }
         }
+
+        public string GroupBoxName
+        {
+            get { return groupBox1.Text; }
+        }
+
+        private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                int i = 0;
+                bool buttonFound = false;
+                while ((i < numberOfButtons) & !buttonFound)
+                {
+                    if (rbList[i].Checked)
+                    {
+                        currentValue = i + 1;
+                        buttonFound = true;
+                        CurrentSelectionChanged?.Invoke((object)this, e);
+                    }
+                    i += 1;
+                }
+            }
+        }
+
+        //private void showMe_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        MessageBox.Show(rbList[currentValue - 1].Text);
+        //    }
+        //    catch (IndexOutOfRangeException ex)
+        //    {
+        //        MessageBox.Show(ex.Message.ToString());
+        //        throw;
+        //    }
+            
+        //}
     }
 }
