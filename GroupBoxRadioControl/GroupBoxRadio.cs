@@ -13,24 +13,15 @@ namespace GroupBoxRadioControl
     public partial class GroupBoxRadioControl : UserControl
     {
 
-        int numberOfButtons = 0;
-        int currentValue = 1;
-        List<RadioButton> rbList = new List<RadioButton>();
+        private int numberOfButtons = 0;
+        private int currentValue = 1;
+        private List<RadioButton> rbList = new List<RadioButton>();
+
         public event EventHandler CurrentSelectionChanged;
 
         public GroupBoxRadioControl()
         {
             InitializeComponent();
-
-            rbList.Add(this.rb0);
-            rbList.Add(this.rb1);
-            rbList.Add(this.rb2);
-            rbList.Add(this.rb3);
-            rbList.Add(this.rb4);
-            rbList.Add(this.rb5);
-            rbList.Add(this.rb6);
-            rbList.Add(this.rb7);
-            numberOfButtons = rbList.Count();
         }
 
         //https://docs.microsoft.com/en-us/previous-versions/dotnet/articles/ms996431(v=msdn.10)
@@ -52,10 +43,25 @@ namespace GroupBoxRadioControl
             }
         }
 
-        public string GroupBoxName
+        private string groupBoxHeader;
+
+        public string GroupBoxHeader
         {
-            get { return groupBox1.Text; }
+            get { return groupBoxHeader; }
+            set
+            {
+                if (!string.IsNullOrEmpty(groupBoxHeader))
+                {
+                    groupBoxHeader = value;
+                }
+                else
+                {
+                    ; // do nothing
+                }
+                
+            }
         }
+
 
         private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
         {
@@ -77,6 +83,20 @@ namespace GroupBoxRadioControl
             }
         }
 
+        private void GroupBoxRadioControl_Load(object sender, EventArgs e)
+        {
+            rbList.Add(this.rb0);
+            rbList.Add(this.rb1);
+            rbList.Add(this.rb2);
+            rbList.Add(this.rb3);
+            rbList.Add(this.rb4);
+            rbList.Add(this.rb5);
+            rbList.Add(this.rb6);
+            rbList.Add(this.rb7);
+
+            numberOfButtons = rbList.Count();
+        }
+
         //private void showMe_Click(object sender, EventArgs e)
         //{
         //    try
@@ -88,7 +108,7 @@ namespace GroupBoxRadioControl
         //        MessageBox.Show(ex.Message.ToString());
         //        throw;
         //    }
-            
+
         //}
     }
 }

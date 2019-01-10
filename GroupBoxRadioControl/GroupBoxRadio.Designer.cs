@@ -206,6 +206,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GroupBoxRadioControl";
             this.Size = new System.Drawing.Size(1212, 88);
+            this.Load += new System.EventHandler(this.GroupBoxRadioControl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
