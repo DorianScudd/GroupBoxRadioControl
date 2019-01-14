@@ -15,6 +15,7 @@ namespace GroupBoxRadioControl
 
         private int numberOfButtons = 0;
         private int currentValue = 1;
+        //private string groupBoxHeader;
         private List<RadioButton> rbList = new List<RadioButton>();
 
         public event EventHandler CurrentSelectionChanged;
@@ -39,31 +40,43 @@ namespace GroupBoxRadioControl
                 {
                     rbList[currentValue - 1].Checked = true;
                 }
-
             }
         }
 
-        private string groupBoxHeader;
-
-        public string GroupBoxHeader
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Bindable(true)]
+        [System.ComponentModel.Category("Appearance")]
+        public override string Text //string GroupBoxHeader
         {
-            get { return groupBoxHeader; }
+            get { return groupBox1.Text; }
             set
             {
-                if (!string.IsNullOrEmpty(groupBoxHeader))
+                if (!string.IsNullOrEmpty(groupBox1.Text))
                 {
-                    groupBoxHeader = value;
+                    groupBox1.Text = value;
                 }
                 else
                 {
-                    ; // do nothing
+                    groupBox1.Text = "Undefined"; // do nothing
                 }
-                
             }
+            //get { return groupBoxHeader; }
+            //set
+            //{
+            //    if (!string.IsNullOrEmpty(groupBoxHeader))
+            //    {
+            //        groupBoxHeader = value;
+            //    }
+            //    else
+            //    {
+            //        groupBoxHeader = "Undefined"; // do nothing
+            //    }
+            //}
         }
 
-
-        private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
+    private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
             if (rb.Checked)
@@ -95,20 +108,7 @@ namespace GroupBoxRadioControl
             rbList.Add(this.rb7);
 
             numberOfButtons = rbList.Count();
+            
         }
-
-        //private void showMe_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        MessageBox.Show(rbList[currentValue - 1].Text);
-        //    }
-        //    catch (IndexOutOfRangeException ex)
-        //    {
-        //        MessageBox.Show(ex.Message.ToString());
-        //        throw;
-        //    }
-
-        //}
     }
 }

@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.rb2);
             this.groupBox1.Controls.Add(this.rb1);
             this.groupBox1.Controls.Add(this.rb0);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -205,7 +205,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GroupBoxRadioControl";
-            this.Size = new System.Drawing.Size(1212, 88);
+            this.Size = new System.Drawing.Size(1186, 55);
             this.Load += new System.EventHandler(this.GroupBoxRadioControl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
