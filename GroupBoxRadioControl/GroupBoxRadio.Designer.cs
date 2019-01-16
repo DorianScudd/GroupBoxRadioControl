@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSelectOperator = new System.Windows.Forms.Button();
             this.rb7 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOperator = new System.Windows.Forms.TextBox();
             this.rb6 = new System.Windows.Forms.RadioButton();
             this.rb5 = new System.Windows.Forms.RadioButton();
             this.rb4 = new System.Windows.Forms.RadioButton();
@@ -44,9 +44,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSelectOperator);
             this.groupBox1.Controls.Add(this.rb7);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtOperator);
             this.groupBox1.Controls.Add(this.rb6);
             this.groupBox1.Controls.Add(this.rb5);
             this.groupBox1.Controls.Add(this.rb4);
@@ -63,14 +63,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button1
+            // btnSelectOperator
             // 
-            this.button1.Location = new System.Drawing.Point(1113, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "←";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectOperator.Location = new System.Drawing.Point(1113, 24);
+            this.btnSelectOperator.Name = "btnSelectOperator";
+            this.btnSelectOperator.Size = new System.Drawing.Size(50, 23);
+            this.btnSelectOperator.TabIndex = 8;
+            this.btnSelectOperator.Text = "←";
+            this.btnSelectOperator.UseVisualStyleBackColor = true;
+            this.btnSelectOperator.Click += new System.EventHandler(this.btnSelectOperator_Click);
             // 
             // rb7
             // 
@@ -87,12 +88,12 @@
             this.rb7.UseVisualStyleBackColor = false;
             this.rb7.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
-            // textBox1
+            // txtOperator
             // 
-            this.textBox1.Location = new System.Drawing.Point(971, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtOperator.Location = new System.Drawing.Point(971, 24);
+            this.txtOperator.Name = "txtOperator";
+            this.txtOperator.Size = new System.Drawing.Size(136, 20);
+            this.txtOperator.TabIndex = 9;
             // 
             // rb6
             // 
@@ -224,7 +225,7 @@
         private System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.RadioButton rb0;
         private System.Windows.Forms.RadioButton rb7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtOperator;
+        private System.Windows.Forms.Button btnSelectOperator;
     }
 }

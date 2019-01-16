@@ -19,6 +19,7 @@ namespace GroupBoxRadioControl
         private List<RadioButton> rbList = new List<RadioButton>();
 
         public event EventHandler CurrentSelectionChanged;
+        public event EventHandler SelectOperator_Click;
 
         public GroupBoxRadioControl()
         {
@@ -62,21 +63,23 @@ namespace GroupBoxRadioControl
                     groupBox1.Text = "Undefined"; // do nothing
                 }
             }
-            //get { return groupBoxHeader; }
-            //set
-            //{
-            //    if (!string.IsNullOrEmpty(groupBoxHeader))
-            //    {
-            //        groupBoxHeader = value;
-            //    }
-            //    else
-            //    {
-            //        groupBoxHeader = "Undefined"; // do nothing
-            //    }
-            //}
         }
 
-    private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
+        private string selectedOperator;
+
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Bindable(true)]
+        [System.ComponentModel.Category("Appearance")]
+        public string SelectedOperator
+        {
+            get { return selectedOperator; }
+            set { selectedOperator = value; }
+        }
+
+
+        private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
             if (rb.Checked)
@@ -109,6 +112,16 @@ namespace GroupBoxRadioControl
 
             numberOfButtons = rbList.Count();
             
+        }
+
+        private void btnSelectOperator_Click(object sender, EventArgs e)
+        {
+            txtOperator.Text = selectedOperator;
+            if(string.IsNullOrEmpty(txtOperator.Text))
+            {
+                selectedOperator = txtOperator.Text;
+                SelectOperator_Click?.Invoke((object)this, e);
+            }
         }
     }
 }
