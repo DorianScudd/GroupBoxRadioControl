@@ -71,7 +71,7 @@
             this.btnSelectOperator.TabIndex = 8;
             this.btnSelectOperator.Text = "←";
             this.btnSelectOperator.UseVisualStyleBackColor = true;
-            this.btnSelectOperator.Click += new System.EventHandler(this.btnSelectOperator_Click);
+            this.btnSelectOperator.Click += new System.EventHandler(this.BtnSelectOperator_Click);
             // 
             // rb7
             // 
@@ -86,7 +86,7 @@
             this.rb7.TabStop = true;
             this.rb7.Text = "Waiting For Engineer";
             this.rb7.UseVisualStyleBackColor = false;
-            this.rb7.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb7.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // txtOperator
             // 
@@ -108,7 +108,7 @@
             this.rb6.TabStop = true;
             this.rb6.Text = "Waiting For Material";
             this.rb6.UseVisualStyleBackColor = false;
-            this.rb6.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb6.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb5
             // 
@@ -123,7 +123,7 @@
             this.rb5.TabStop = true;
             this.rb5.Text = "Not Enough Operators";
             this.rb5.UseVisualStyleBackColor = false;
-            this.rb5.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb5.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb4
             // 
@@ -137,7 +137,7 @@
             this.rb4.TabStop = true;
             this.rb4.Text = "Job Being Set Up";
             this.rb4.UseVisualStyleBackColor = true;
-            this.rb4.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb4.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb3
             // 
@@ -152,7 +152,7 @@
             this.rb3.TabStop = true;
             this.rb3.Text = "No Work On Machine";
             this.rb3.UseVisualStyleBackColor = false;
-            this.rb3.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb3.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb2
             // 
@@ -167,7 +167,7 @@
             this.rb2.TabStop = true;
             this.rb2.Text = "Down For Maintenance";
             this.rb2.UseVisualStyleBackColor = false;
-            this.rb2.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb2.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb1
             // 
@@ -182,7 +182,7 @@
             this.rb1.TabStop = true;
             this.rb1.Text = "Work On Machine; Not Running";
             this.rb1.UseVisualStyleBackColor = false;
-            this.rb1.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb1.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // rb0
             // 
@@ -197,7 +197,7 @@
             this.rb0.TabStop = true;
             this.rb0.Text = "Running";
             this.rb0.UseVisualStyleBackColor = false;
-            this.rb0.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            this.rb0.CheckedChanged += new System.EventHandler(this.Rb_CheckedChanged);
             // 
             // GroupBoxRadioControl
             // 

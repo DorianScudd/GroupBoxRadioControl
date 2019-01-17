@@ -65,6 +65,22 @@ namespace GroupBoxRadioControl
             }
         }
 
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [Bindable(true)]
+        [System.ComponentModel.Category("Appearance")]
+        public void ButtonPressed()
+        {
+            foreach (RadioButton rb in groupBox1.Controls.OfType<RadioButton>())
+            {
+                if (rb.Checked)
+                {
+                    rb.BackColor = Color.Pink;
+                }
+            }
+        }
+
         private string selectedOperator;
 
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -78,14 +94,14 @@ namespace GroupBoxRadioControl
             set { selectedOperator = value; }
         }
 
-
-        private void rb_CheckedChanged(System.Object sender, System.EventArgs e)
+        private void Rb_CheckedChanged(System.Object sender, System.EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
             if (rb.Checked)
             {
                 int i = 0;
                 bool buttonFound = false;
+
                 while ((i < numberOfButtons) & !buttonFound)
                 {
                     if (rbList[i].Checked)
@@ -114,14 +130,14 @@ namespace GroupBoxRadioControl
             
         }
 
-        private void btnSelectOperator_Click(object sender, EventArgs e)
+        private void BtnSelectOperator_Click(object sender, EventArgs e)
         {
             txtOperator.Text = selectedOperator;
-            if(string.IsNullOrEmpty(txtOperator.Text))
-            {
+            //if(string.IsNullOrEmpty(txtOperator.Text))
+            //{
                 selectedOperator = txtOperator.Text;
                 SelectOperator_Click?.Invoke((object)this, e);
-            }
+            //}
         }
     }
 }
