@@ -49,6 +49,9 @@ namespace GroupBoxRadioControl
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]
         [System.ComponentModel.Category("Appearance")]
+        ///<summary>
+        ///Machine Name
+        ///</summary>
         public override string Text //string GroupBoxHeader
         {
             get { return groupBox1.Text; }
@@ -70,6 +73,8 @@ namespace GroupBoxRadioControl
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]
         [System.ComponentModel.Category("Appearance")]
+        ///<summary>
+        ///Radio button turns pink to show which button(s) were selected</summary>
         public void ButtonPressed()
         {
             foreach (RadioButton rb in groupBox1.Controls.OfType<RadioButton>())
